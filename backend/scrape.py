@@ -1,14 +1,14 @@
 import requests
 from bs4 import BeautifulSoup
 import json
-from db import insertMany, insertOne, deleteMany
+from backend.db import insertMany, insertOne
 
 data = {}
 parsed_quotes = []
-pages = 11
+pages = 13
 
 for page in range(1, pages):
-    url = f"https://www.goodreads.com/author/quotes/3047.John_F_Kennedy?page={page}"
+    url = f"https://www.goodreads.com/author/quotes/229.Abraham_Lincoln?page={page}"
     soup = BeautifulSoup(requests.get(url).content, 'html.parser')
     quotes = soup.find_all("div", class_="quoteText")
 
@@ -42,7 +42,7 @@ for page in range(1, pages):
 
         # The scraped author_title is very inconsistent and varied. Thus, it's better to hardcode this value
         # so it's consistent, when were making api calls by author name.
-        author_title = "John F. Kennedy"
+        author_title = "Abraham Lincoln"
 
         # Adding to the parsed_quotes list as a dictionary
         if origin_text:
@@ -61,7 +61,7 @@ try:
     with open('parsed_quotes.json', 'w', encoding='utf-8') as json_file:
         json.dump(parsed_quotes, json_file, ensure_ascii=False, indent=2)
         print("Data has been successfully written to parsed_quotes.json")
-    # insertMany(parsed_quotes)
+    insertMany(parsed_quotes)
 except Exception as e:
     print(f"Something went wrong {e}")
 

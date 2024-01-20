@@ -1,6 +1,14 @@
 from pymongo.mongo_client import MongoClient
-url = ""
-client = MongoClient(url)
+from dotenv import load_dotenv
+import os
+import json
+from bson import json_util
+
+load_dotenv()
+username = os.getenv("USERNAME")
+password = os.getenv("PASSWORD")
+uri = f"mongodb+srv://{username}:{password}@serverlessinstance0.3fnxace.mongodb.net/?retryWrites=true&w=majority"
+client = MongoClient(uri)
 db = client.db
 collection = db.quotes
 
@@ -58,6 +66,9 @@ def getQuotesByAuthor(author: str):
             data.append({"quote": quote})
     return data
 
+def parse_json(data):
+    return json.loads(json_util.dumps(data))
+
 # Used for testing purposes
 # def deleteMany():
 #     result = collection.delete_many({})
@@ -68,8 +79,8 @@ if __name__ == "__main__":
     try:
         client.admin.command('ping')
         print("Pinged your deployment. You successfully connected to MongoDB!")
-        x = getQuotesByAuthor("John F. Kennedy")
-        print(x)
+        # query = { "quote": { "$regex": "^[\s\S]{1000,}$" } }
+        # collection.delete_many(query)
     except Exception as e:
         print(e)
     

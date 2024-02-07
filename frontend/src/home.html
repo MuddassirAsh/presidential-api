@@ -6,10 +6,11 @@
     <title>Presidental Quotes API</title>
     <link rel="stylesheet" href="./output.css">
     <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
+    <link rel="stylesheet" href="./prism.css">
 </head>
 <body>
     <div class="relative overflow-hidden bg-white h-lvh">
-        <div class="pb-80 pt-16 sm:pb-40 sm:pt-24 lg:pb-48 lg:pt-40">
+        <div class="pb-80 pt-16 sm:pb-40 sm:pt-24 lg:pb-48">
           <div class="relative mx-auto max-w-7xl px-4 sm:static sm:px-6 lg:px-8">
             <div class="sm:max-w-lg">
               <h1 class="text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl">Prezidential</h1>
@@ -51,16 +52,24 @@
                     </div>
                   </div>
                 </div>
-                <a href="./doc.html" class="inline-block rounded-md border border-transparent bg-indigo-600 px-8 py-3 text-center font-medium text-white hover:bg-indigo-700">Get Started</a>
-                <div class="container mt-9">
+                <a href="./doc.html" class="inline-block rounded-md border border-transparent bg-rose-500 px-8 py-3 text-center font-medium text-white hover:bg-rose-800">Get Started</a>
+                <div class="container max-w-xl mt-9">
                   <h1 class="text-4xl font-bold">Try it Now</h1>
                   <p class="my-2 text-lg font-display">Run this to get a random quote</p>
-                  
+                  <pre><code class="language-javascript">fetch('https://animechan.xyz/api/random')
+    .then(response => response.json())
+    .then(quote => console.log(quote))</code></pre>
+                  <button id="fetch-quote"class="bg-rose-500 text-white active:bg-rose-800 font-bold uppercase text-xs px-4 py-3
+        rounded shadow hover:shadow-md outline-none focus:outline-none mr-1 my-5 false">Run Script
+                  </button>
+                  <pre id="returned-quote"class="my-2 text-lg font-display whitespace-pre-wrap overflow-auto"><code class="language-javascript">...</code></pre>
                 </div>
               </div>
             </div>
           </div>
         </div>
       </div>
+      <script src="./prism.js"></script>
+      <script src="./script.js"></script>
 </body>
 </html>

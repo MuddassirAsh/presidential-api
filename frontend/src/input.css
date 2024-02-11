@@ -5,6 +5,11 @@
 a,h1,h2,h3 {
     --tw-text-opacity:1;
 }
+
 h1,h2,h3 {
     color: rgb(31 41 55/var(--tw-text-opacity));
+}
+
+#returned-quote{
+    white-space: pre-wrap;
 }

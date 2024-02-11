@@ -2,8 +2,16 @@ from fastapi import FastAPI
 from db import getRandomQuote, getTenRandomQuotes, getQuotesByAuthor
 from pydantic import BaseModel
 from typing import Optional, List
-
+from fastapi.middleware.cors import CORSMiddleware
+origins = ["*"]
 app = FastAPI()
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=origins,
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 class data(BaseModel):
     quote: str
@@ -46,3 +54,4 @@ def author(author: str) -> List[data]:
         return getQuotesByAuthor("Abraham Lincoln")
     else:
         return {"error": "Incorrect author name. Please check the docs for more information."}
+    

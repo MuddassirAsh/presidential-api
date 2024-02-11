@@ -11,12 +11,15 @@ async function getRandomQuote(){
         })
 }
 
-function displayRandomQuote(){
-var container = document.getElementById("returned-quote")
+function displayRandomQuote(e){
+    e.preventDefault()
+    button.disabled = true;
+    var container = document.getElementById("returned-quote")
     getRandomQuote()
         .then(data =>  {
             var html = Prism.highlight(data, Prism.languages.json, "json")
             container.innerHTML = html
+            button.disabled = false;
         })
         .catch(error => {
             console.error("Error displaying random quote: ", error);

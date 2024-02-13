@@ -36,6 +36,16 @@ def getTenRandomQuotes():
         lst.append({"quote": quote, "author": author})
     return lst
 
+def getQuoteByAuthor(author: str):
+    cursor = collection.aggregate([ 
+        { "$match": { "author" : author } },
+        { "$sample": { "size" : 1 } } 
+        ])
+    for i in cursor:
+        quote = i.get("quotes")
+        author = i.get("author")
+    return {"quote": quote, "author": author}
+
 def getQuotesByAuthor(author: str):
     lst = []
     cursor = collection.aggregate([ 
@@ -52,9 +62,9 @@ def parse_json(data):
     return json.loads(json_util.dumps(data))
 
 # Used for testing purposes
-def deleteMany():
-    result = collection.delete_many({})
-    return result
+# def deleteMany():
+#     result = collection.delete_many({})
+#     return result
 
 # file is meant to be imported as a module instead of executing directly
 if __name__ == "__main__":

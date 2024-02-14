@@ -9,43 +9,43 @@
     <link rel="stylesheet" href="./prism.css">
 </head>
 <body>
-    <div class="relative overflow-hidden bg-white h-lvh">
-        <div class="pb-80 pt-16 sm:pb-40 lg:pb-48 2xl:mt-40">
-          <div class="relative mx-auto max-w-7xl px-4 sm:static sm:px-6 lg:px-8">
+    <div class="overflow-hidden bg-white">
+        <div class="pb-80 pt-4 sm:pb-40 lg:pb-48 2xl:mt-40">
+          <div class="relative mx-auto max-w-7xl px-4 sm:static sm:px-6 lg:px-16">
             <div class="sm:max-w-lg">
-              <h1 class="text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl 2xl:text-4xl">Prezidential</h1>
+              <h1 class="text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl xl:tet-2xl 2xl:text-4xl">Prezidential</h1>
               <p class="mt-4 text-xl text-gray-500">A free restful API serving quality preisdential quotes.</p>
             </div>
             <div>
-              <div class="mt-10">
+              <div class="mt-8">
                 <!-- Decorative image grid -->
                 <div aria-hidden="true" class="pointer-events-none lg:absolute lg:inset-y-0 lg:mx-auto lg:w-full lg:max-w-[93rem]">
-                  <div class="absolute transform sm:left-1/2 sm:top-0 sm:translate-x-8 lg:left-1/2 lg:top-1/2 lg:-translate-y-1/2 lg:translate-x-8">
+                  <div class="absolute transform sm:left-1/2 sm:top-1/2 sm:translate-x-8 md:top-[4rem] lg:left-1/2 lg:top-1/2 lg:-translate-y-1/2 lg:translate-x-8 xl:pl-24">
                     <div class="flex items-center space-x-6 lg:space-x-8">
                       <div class="grid flex-shrink-0 grid-cols-1 gap-y-6 lg:gap-y-8">
-                        <div class="h-64 w-44 overflow-hidden rounded-lg sm:opacity-0 lg:opacity-100">
+                        <div class="h-64 w-44 overflow-hidden rounded-lg hidden sm:hidden md:block lg:block">
                           <img src="../assets/biden.png" alt="" class="h-full w-full object-cover object-center">
                         </div>
-                        <div class="h-64 w-44 overflow-hidden rounded-lg">
+                        <div class="h-64 w-44 overflow-hidden rounded-lg hidden sm:hidden md:block lg:block">
                           <img src="../assets/trump.webp" alt="" class="h-full w-full object-cover object-center">
                         </div>
                       </div>
                       <div class="grid flex-shrink-0 grid-cols-1 gap-y-6 lg:gap-y-8">
-                        <div class="h-64 w-44 overflow-hidden rounded-lg">
-                          <img src="../assets/obama.webp" alt="" class="h-full w-full object-cover object-center">
-                        </div>
-                        <div class="h-64 w-44 overflow-hidden rounded-lg">
+                        <div class="h-64 w-44 overflow-hidden rounded-lg hidden sm:hidden md:block lg:block">
                           <img src="../assets/kennedy2.webp" alt="" class="h-full w-full object-cover object-center">
                         </div>
-                        <div class="h-64 w-44 overflow-hidden rounded-lg">
+                        <div class="h-64 w-44 overflow-hidden rounded-lg hidden sm:hidden md:block lg:block">
+                          <img src="../assets/obama.webp" alt="" class="h-full w-full object-cover object-center">
+                        </div>
+                        <div class="h-64 w-44 overflow-hidden rounded-lg sm:hidden md:hidden lg:block">
                           <img src="../assets/lincoln.webp" alt="" class="h-full w-full object-cover object-center">
                         </div>
                       </div>
-                      <div class="grid flex-shrink-0 grid-cols-1 gap-y-6 lg:gap-y-8">
+                      <div class="grid flex-shrink-0 grid-cols-1 gap-y-6 sm:hidden md:hidden lg:gap-y-8 lg:block">
                         <div class="h-64 w-44 overflow-hidden rounded-lg">
                           <img src="../assets/bush.webp" alt="" class="h-full w-full object-cover object-center">
                         </div>
-                        <div class="h-64 w-44 overflow-hidden rounded-lg">
+                        <div class="h-64 w-44 overflow-hidden rounded-lg sm:hidden md:hidden lg:block">
                           <img src="../assets/reagan.webp" alt="" class="h-full w-full object-cover object-center">
                         </div>
                       </div>
@@ -53,7 +53,7 @@
                   </div>
                 </div>
                 <a href="./doc.html" class="inline-block rounded-md border border-transparent bg-rose-500 px-8 py-3 text-center font-medium text-white hover:bg-rose-800">Get Started</a>
-                <div class="container max-w-[40rem] mt-9">
+                <div class="container max-w-[40rem] mt-12 md:max-w-md lg:max-w-3xl">
                   <h1 class="text-4xl font-bold">Try it Now</h1>
                   <p class="my-2 text-lg font-display">Run this to get a random quote</p>
                   <pre><code class="language-javascript">fetch('https://animechan.xyz/api/random')

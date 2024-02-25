@@ -3,6 +3,9 @@ from db import getRandomQuote, getTenRandomQuotes, getQuoteByAuthor, getQuotesBy
 from pydantic import BaseModel
 from typing import Optional, List
 from fastapi.middleware.cors import CORSMiddleware
+from fastapi.staticfiles import StaticFiles
+from fastapi.responses import FileResponse
+from fastapi.templating import Jinja2Templates
 
 presidents =  \
 {
@@ -22,6 +25,7 @@ presidents =  \
 
 origins = ["*"]
 app = FastAPI()
+app.mount("/static", StaticFiles(directory="../frontend/"), name="static")
 app.add_middleware(
     CORSMiddleware,
     allow_origins=origins,
@@ -29,6 +33,10 @@ app.add_middleware(
     allow_methods=["*"],
     allow_headers=["*"],
 )
+
+@app.get("/")
+def home():
+    return FileResponse('../frontend/src/index.html')
 
 class data(BaseModel):
     quote: str
@@ -40,11 +48,11 @@ def random() -> data:
 
 @app.get("/api/quotes")
 def quotes() -> List[data]:
-    author = author.lower()
     return getTenRandomQuotes()
 
 @app.get("/api/random/{author}")
-def quotes(author: str) -> data:
+def quote(author: str) -> data:
+    author = author.lower()
     return getQuoteByAuthor(presidents[author])
 
 @app.get("/api/author/{author}")

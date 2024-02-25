@@ -13,10 +13,3 @@ h1,h2,h3 {
 #returned-quote{
     white-space: pre-wrap;
 }
-
-
-/* @media (min-width: 1280px) {
-    #z {    
-      display: none
-    }
-} */

@@ -61,12 +61,6 @@ def getQuotesByAuthor(author: str):
 def parse_json(data):
     return json.loads(json_util.dumps(data))
 
-# Used for testing purposes
-# def deleteMany():
-#     result = collection.delete_many({})
-#     return result
-
-# file is meant to be imported as a module instead of executing directly
 if __name__ == "__main__":
     try:
         client.admin.command('ping')

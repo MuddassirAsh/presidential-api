@@ -1,11 +1,9 @@
 from fastapi import FastAPI
 from db import getRandomQuote, getTenRandomQuotes, getQuoteByAuthor, getQuotesByAuthor
 from pydantic import BaseModel
-from typing import Optional, List
+from typing import List
 from fastapi.middleware.cors import CORSMiddleware
-from fastapi.staticfiles import StaticFiles
-from fastapi.responses import FileResponse
-from fastapi.templating import Jinja2Templates
+from mangum import Mangum
 
 presidents =  \
 {
@@ -25,7 +23,6 @@ presidents =  \
 
 origins = ["*"]
 app = FastAPI()
-app.mount("/static", StaticFiles(directory="../frontend/"), name="static")
 app.add_middleware(
     CORSMiddleware,
     allow_origins=origins,
@@ -33,10 +30,6 @@ app.add_middleware(
     allow_methods=["*"],
     allow_headers=["*"],
 )
-
-@app.get("/")
-def home():
-    return FileResponse('../frontend/src/index.html')
 
 class data(BaseModel):
     quote: str
@@ -59,3 +52,5 @@ def quote(author: str) -> data:
 def author(author: str) -> List[data]:
     author = author.lower()
     return getQuotesByAuthor(presidents[author])
+
+handler = Mangum(app)

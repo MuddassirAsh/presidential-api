@@ -609,6 +609,10 @@ video {
   margin-bottom: 1.25rem;
 }
 
+.\!mb-6 {
+  margin-bottom: 1.5rem !important;
+}
+
 .\!mt-10 {
   margin-top: 2.5rem !important;
 }
@@ -639,6 +643,18 @@ video {
 
 .mt-8 {
   margin-top: 2rem;
+}
+
+.\!mt-4 {
+  margin-top: 1rem !important;
+}
+
+.\!mt-2 {
+  margin-top: 0.5rem !important;
+}
+
+.\!mt-3 {
+  margin-top: 0.75rem !important;
 }
 
 .inline-block {
@@ -725,6 +741,22 @@ video {
   list-style-type: decimal;
 }
 
+.list-\[auto\] {
+  list-style-type: auto;
+}
+
+.list-none {
+  list-style-type: none;
+}
+
+.list-disc {
+  list-style-type: disc;
+}
+
+.list-\[circle\] {
+  list-style-type: circle;
+}
+
 .grid-cols-1 {
   grid-template-columns: repeat(1, minmax(0, 1fr));
 }
@@ -798,6 +830,16 @@ video {
 .bg-white {
   --tw-bg-opacity: 1;
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
+}
+
+.bg-purple-500 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(168 85 247 / var(--tw-bg-opacity));
+}
+
+.bg-rose-300 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(253 164 175 / var(--tw-bg-opacity));
 }
 
 .object-cover {
@@ -910,6 +952,10 @@ video {
   text-transform: uppercase;
 }
 
+.leading-\[35px\] {
+  line-height: 35px;
+}
+
 .tracking-tight {
   letter-spacing: -0.025em;
 }
@@ -929,13 +975,37 @@ video {
   color: rgb(254 202 202 / var(--tw-text-opacity));
 }
 
+.text-rose-700 {
+  --tw-text-opacity: 1;
+  color: rgb(190 18 60 / var(--tw-text-opacity));
+}
+
 .text-white {
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
 }
 
+.text-rose-500 {
+  --tw-text-opacity: 1;
+  color: rgb(244 63 94 / var(--tw-text-opacity));
+}
+
+.text-rose-900 {
+  --tw-text-opacity: 1;
+  color: rgb(136 19 55 / var(--tw-text-opacity));
+}
+
+.text-rose-800 {
+  --tw-text-opacity: 1;
+  color: rgb(159 18 57 / var(--tw-text-opacity));
+}
+
 .underline {
   text-decoration-line: underline;
+}
+
+.decoration-rose-500 {
+  text-decoration-color: #f43f5e;
 }
 
 .shadow {
@@ -1068,14 +1138,6 @@ h1,h2,h3 {
     top: 33rem;
   }
 
-  .lg\:top-\[27rem\] {
-    top: 27rem;
-  }
-
-  .lg\:top-\[28rem\] {
-    top: 28rem;
-  }
-
   .lg\:mx-auto {
     margin-left: auto;
     margin-right: auto;
@@ -1124,11 +1186,6 @@ h1,h2,h3 {
 
   .lg\:pb-48 {
     padding-bottom: 12rem;
-  }
-
-  .lg\:text-lg {
-    font-size: 1.125rem;
-    line-height: 1.75rem;
   }
 }
 

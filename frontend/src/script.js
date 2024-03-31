@@ -3,7 +3,7 @@ var button = document.getElementById("fetch-quote")
 button.addEventListener('click', displayRandomQuote);
 
 async function getRandomQuote(){    
-    return fetch("http://localhost:8000/api/random")
+    return fetch("https://api.prezidential.xyz/api/random")
     .then(response => response.json())
     .then(obj => {
             console.log(obj)

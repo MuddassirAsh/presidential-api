@@ -14,15 +14,18 @@ async function getRandomQuote(){
 function displayRandomQuote(e){
     e.preventDefault()
     button.disabled = true
-    // button.style.color = "blue"
+    button.className = "bg-rose-300 text-white active:bg-rose-800 font-bold uppercase text-xs px-4 py-3 \
+        rounded shadow hover:shadow-md outline-none focus:outline-none mr-1 my-5 false"
     var container = document.getElementById("returned-quote")
     getRandomQuote()
         .then(data =>  {
             var html = Prism.highlight(data, Prism.languages.json, "json")
             container.innerHTML = html
             button.disabled = false
+            button.className = "bg-rose-500 text-white active:bg-rose-800 font-bold uppercase text-xs px-4 py-3 \
+        rounded shadow hover:shadow-md outline-none focus:outline-none mr-1 my-5 false"
         })
         .catch(error => {
             console.error("Error displaying random quote: ", error)
-        })
+        });
 }

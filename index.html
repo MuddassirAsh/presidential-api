@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Presidental Quotes API</title>
     <link rel="icon" href="./frontend/assets/logo.svg">
+    <!-- <link rel="stylesheet" href="./frontend/src/output.css"> -->
     <link rel="stylesheet" href="./frontend/src/prod.css">
     <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
     <link rel="stylesheet" href="./frontend/src/prism.css">
@@ -16,7 +17,6 @@
             <div class="sm:max-w-lg">
               <img src="./frontend/assets/logo.svg" alt="Prezidental Logo" class="pl-[3.3rem] mr-3 h-32 sm:h-48">
               <h1 class="text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl xl:tet-2xl 2xl:text-4xl">
-                <!-- <img src="../assets/logo.svg" alt="Prezidental Logo" class="inline float-right mr-3 h-6 sm:h-16"> -->
                   Prezidential
               </h1>
               <p class="mt-4 text-xl text-gray-500">A free restful API serving quality preisdential quotes.</p>
@@ -64,7 +64,7 @@
                   <pre><code class="language-javascript">fetch('https://api.prezidential.xyz/api/random')
     .then(response => response.json())
     .then(quote => console.log(quote))</code></pre>
-                  <button id="fetch-quote"class="bg-rose-500 text-white active:bg-rose-800 font-bold uppercase text-xs px-4 py-3
+            <button id="fetch-quote"class="bg-rose-500 text-white active:bg-rose-800 font-bold uppercase text-xs px-4 py-3
         rounded shadow hover:shadow-md outline-none focus:outline-none mr-1 my-5 false">Run Script
                   </button>
                   <pre id="returned-quote" class="my-2 text-lg font-display language-javascript">null</pre>
